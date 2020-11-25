@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <script src="../Scripts/Angular.min.js"></script>
+    <script src="../Scripts/CustomScripts/App.js"></script>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div ng-controller="myController">
+        <table>
+            <thead>
+                <tr>
+                    <th>Technology</th>
+                    <th>Likes</th>
+                    <th>Dislikes</th>
+                    <th>Like/Dislike</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="tech in technologies">
+                    <td>{{tech.name}}</td>
+                    <td>{{tech.likes}}</td>
+                    <td>{{tech.dislikes}}</td>
+                    <td>
+                        <button ng-click="incrementLikes(tech)">Like</button>
+                        <button ng-click="incrementDislikes(tech)">Dislike</button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="emp in employees">
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.gender | gender}}</td>
+                    <td>{{emp.salary}}</td>
+
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <div ng-controller="controller1">
+        <h1>{{message}}</h1>
+        <div ng-controller="childController1">
+            <h1 ng-click="emitevent()">{{message}}</h1>
+        </div>
+        <div ng-controller="childController2">{{message}}</div>
+    </div>
+</body>
+</html>
